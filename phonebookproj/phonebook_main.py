@@ -44,21 +44,21 @@ class ParentWindow(Frame):
         # Instantiate the Tkinter menu dropdown object
         #This is the menu that will appear at the top of the window
         menubar = Menu(self.master)
-        filemenu = Menu(menubar, tearoff= 0)
-        filemenu.add_seperator()
-        filemenu.add_command(label="Exit", underline=1, accelerator="Ctrl+Q", command=lambda: phonebook_func.ask_quit(self))
+        filemenu = Menu(menubar, tearoff=0)
+        filemenu.add_separator()
+        filemenu.add_command(label="Exit", underline=1,accelerator="Ctrl+Q",command=lambda: drill50_phonebook_func.ask_quit(self))
         menubar.add_cascade(label="File", underline=0, menu=filemenu)
-        helpmenu = Menu(menubar, tearoff=0) #defines particular drop down column; tearoff=0 means do not seperate from menubar
-        helpmenu.add_seperator()
+        helpmenu = Menu(menubar, tearoff=0) # defines the particular drop down colum and tearoff=0 means do not separate from menubar
+        helpmenu.add_separator()
         helpmenu.add_command(label="How to use this program")
-        helpmenu.add_seperator()
-        helpmenu.add_command(label="About this Phonebook Demo") #add_command is a child menu bar item of the add_cascade parent item
+        helpmenu.add_separator()
+        helpmenu.add_command(label="About This Phonebook Demo") # add_command is a child menubar item of the add_cascde parent item
         menubar.add_cascade(label="Help", menu=helpmenu) #add_cascade = parent menubar item(visible heading)
 
 
         self.master.config(menu=menubar, borderwidth='1')
 
-if __name__ =="__main__":
+if __name__ == "__main__":
     root = tk.Tk()
     App = ParentWindow(root)
     root.mainloop()
