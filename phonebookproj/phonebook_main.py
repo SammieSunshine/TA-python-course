@@ -45,8 +45,8 @@ class ParentWindow(Frame):
         #This is the menu that will appear at the top of the window
         menubar = Menu(self.master)
         filemenu = Menu(menubar, tearoff=0)
-        filemenu.add_separator()
-        filemenu.add_command(label="Exit", underline=1,accelerator="Ctrl+Q",command=lambda: drill50_phonebook_func.ask_quit(self))
+        filemenu.add_separator() #compared to original file, fixed.
+        filemenu.add_command(label="Exit", underline=1,accelerator="Ctrl+Q",command=lambda:phonebook_func.ask_quit(self))
         menubar.add_cascade(label="File", underline=0, menu=filemenu)
         helpmenu = Menu(menubar, tearoff=0) # defines the particular drop down colum and tearoff=0 means do not separate from menubar
         helpmenu.add_separator()
