@@ -17,8 +17,59 @@
 
 
 # import datetime modues and any others to aid in time zone calculations
-from datetime import date,time,datetime,dateutil
+from datetime import datetime
+import time
+import pytz
+
+
+
 # create script to determine curent times in Portland, NYC, and London.
+Portland = pytz.timezone('US/Pacific')
+NYC = pytz.timezone('US/Eastern')
+London = pytz.timezone('Europe/London')
+
+P_curr = datetime.now(Portland).time()
+N_curr = datetime.now(NYC).time()
+L_curr = datetime.now(London).time()
+
 #Then compare branch hours to see if they're opened or closed.
+Branch_Open = datetime.time(9,00,tzinfo= Portland)
+Branch_Open = datetime.time(9,00,tzinfo= NYC)
+Branch_Open = datetime.time(9,00,tzinfo= London)
+
+Branch_Close = datetime.time(17,00, tzinfo= Portland)
+Branch_Close = datetime.time(17,00, tzinfo= NYC)
+Branch_Close = datetime.time(17,00, tzinfo= London)
+
 
 #print out the three branches and whether or not they're open.
+
+print("Welcome to our Portland Branch! The current time is ", P_curr.strftime('%H:%M'))
+
+if P_curr >= Branch_Open and time_curr <= time_close:
+    print("This Branch is currently open")
+else:
+    print("We apologize, but this branch is currently closed. We will be glad to serve you during business hours.")
+
+
+print("Welcome to our NYC Branch! The current time is ", N_curr.strftime('%H:%M'))
+
+if N_curr >= time_open and time_curr <= time_close:
+    print("This Branch is currently open")
+else:
+    print("We apologize, but this branch is currently closed. We will be glad to serve you during business hours.")
+
+
+
+print("Welcome to our London Branch! The current time is ", L_curr.strftime('%H:%M'))
+if L_curr >= time_open and time_curr <= time_close:
+    print("This Branch is currently open")
+else:
+    print("We apologize, but this branch is currently closed. We will be glad to serve you during business hours.")
+
+
+
+
+
+
+
