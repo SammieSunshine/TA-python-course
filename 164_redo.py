@@ -12,11 +12,6 @@
 
 
 import sqlite3
-
-
-
-
-
 #creates db; connects to and holds connection
 conn = sqlite3.connect('164_redo.db')
 
@@ -31,20 +26,23 @@ conn.close()#close connecton
 
 
 import sqlite3
-fileList = ('information.docx','Hello.txt','myImage.png',\
-            'myMovie.mpg','World.txt', 'data.pdf' ,'myPhoto.jpg')
 
 conn = sqlite3.connect('164_redo.db')
 #insert .txt files into table
 
 with conn:
+    fileList = ('information.docx','Hello.txt','myImage.png',\
+            'myMovie.mpg','World.txt', 'data.pdf' ,'myPhoto.jpg')
     cur = conn.cursor()
-    cur.execute(files)
+    cur.execute("fileList")
+ 
     for files in fileList:
         if files.endswith(".txt"):
-           insert files into table_Files
+            cur.execute("INSERT INTO table_Files VALUES(?,?)")
+            cur.execute("SELECT fname FROM tbl_Files")#view corrected table with .txt files
     conn.commit()
 conn.close()
+
 
 
     

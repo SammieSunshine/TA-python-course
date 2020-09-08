@@ -30,7 +30,7 @@ def create_db(self):
     conn = sqlite3.connect('phonebook.db')
     with conn:
         cur = conn.cursor()
-        cur.execute('CREATE TABLE if not exists tbl_phonebook(   \
+        cur.execute('CREATE TABLE IF NOT EXISTS tbl_phonebook(   \
             ID INTEGER PRIMARY KEY AUTOINCREMENT, \
             col_fname TEXT, \
             col_lname TEXT, \
