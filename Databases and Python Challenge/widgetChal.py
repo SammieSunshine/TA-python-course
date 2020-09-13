@@ -42,20 +42,9 @@ class FileCheck(Frame):
         self.varSpace2 = StringVar()
         self.varCheck = StringVar()
 
-        def Browse1(self):
-            Space1 = self.varSpace1.get()
 
-        def Browse2(self):
-            Space2 = self.varSpace2.get()
-
-        def checkFiles(self):
-            Space1= self.varCheck.get()
-
-        def closeProgram(self):
-            self.master.destroy()
-
-        self.browse1 = Button(self.master, text= 'Browse...', width=12, height=1, command=Browse1)#top browse button
-        self.browse1.grid(row=0, column=0, padx=(15,0), pady=(50,0), sticky=NW)
+        self.Browse1 = Button(self.master, text= 'Browse...', width=12, height=1, command=Browse1)#top browse button
+        self.Browse1.grid(row=0, column=0, padx=(15,0), pady=(50,0), sticky=NW)
         
         self.browse2 = Button(self.master, text= 'Browse...',width=12, height=1, command=Browse2)#bottom browse button
         self.browse2.grid(row=1, column=0, padx=(15,0), pady=(10,0), sticky=NW)
@@ -71,10 +60,29 @@ class FileCheck(Frame):
 
         self.txt2=Entry(self.master, text='', font=('sans serif',16), width=28,fg='black',bg='white')
         self.txt2.grid(row=1,column=3, padx=(31,0), pady=(10,1), sticky=NW)
+        
+    def Browse1(self):
+        Space1 = self.varSpace1.get()
+        path = filedialog.askdirectory(initialdir="/", title="Select File")
+        print(path)
+
+    def Browse2(self):
+        Space2 = self.varSpace2.get()
+        path = filedialog.askdirectory(initialdir="/", title="Select File")
+        print(path)
+            
+    def checkFiles(self):
+        SpaceCheck= self.varCheck.get()
+        path = filedialog.askdirectory(initialdir="/", title="Check File")
+        print(path)
+
+    def closeProgram(self):
+        self.master.destroy()
+        os._exit(0)
+
 
 
 if __name__=="__main__":
     root=Tk()
     App = FileCheck(root)
     root.mainloop()
-
