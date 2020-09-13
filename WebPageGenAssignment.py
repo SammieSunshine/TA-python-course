@@ -14,7 +14,13 @@
 
 import webbrowser
 
-Summer =open("SummerSale.html","x")
-url='www.google.com'
-webbrowser.open(url, new=1, autoraise=True)
+Summer =open("EOSSale.html","x")
+Summer.close
+
+Summer =open("EOSSale.html","w")
+Summer.write("Stay tuned for our amazing summer Sale!")
+Summer.close
+
+Summer = open("EOSSale.html","r")
+print(Summer.read())
 
