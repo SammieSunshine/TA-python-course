@@ -25,5 +25,5 @@ destination = '/Users/saman/Desktop/FolderB'
 files = os.listdir(source)
 
 for i in files:
-    #move files represented by 'i' to their new destianation
+#move files represented by 'i' to their new destianation
     shutil.move(source+i, destination)
