@@ -18,10 +18,10 @@ import shutil
 import os
 
 # Set where the source of the files are
-source = '/Users/saman/Desktop/FolderA'
+source = '/Users/saman/Desktop/FolderA/'
 
 # set destination path to FolderB
-destination = '/Users/saman/Desktop/FolderB'
+destination = '/Users/saman/Desktop/FolderB/'
 files = os.listdir(source)
 
 for i in files:
