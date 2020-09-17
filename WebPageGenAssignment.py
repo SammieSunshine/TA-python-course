@@ -36,21 +36,19 @@ frame = tk.Frame(
     bg = "Silver")
 frame.pack()
 
-#Application creation
-WebGen = App()
+
+
 
 #Window manager method calls
-WebGen.master.title('Web Page Generator')
-WebGen.master.resizable(width=True, height=True)
-WebGen.master.config(bg="Silver")
+WebGen.master.title('Web Page Generator')#Page title
+WebGen.master.resizable(width=True, height=True) #Resize allowed
+WebGen.master.config(bg="Silver") #BG color set to silver
 
-class  Client(WebGen,WPhtml):
-    WebLabel = tk.Label(text="Enter Body of text here")
-    WebBody = tk.Entry()
 
-    def ClientEntry(WebGen,WPhtml):
-        WebLabel.pack()
-        WebBody.pack()
+WebLabel = tk.Label(text="Enter Body of text here")
+WebBody = tk.Entry()
+WebLabel.pack()
+WebBody.pack()
         
 #new web page creation
 
@@ -61,4 +59,5 @@ class  Client(WebGen,WPhtml):
 messagebox.showinfo(message='Your Web Page has been updated!')
 
 
-window.mainloop()
+WebGen = App() #Should this 
+WebGen.mainloop()
