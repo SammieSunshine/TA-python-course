@@ -18,46 +18,52 @@
 # Set a new body text of your choice.
 # The GUI should open the html file in a new tab within your browser that displays the newly added text from the user.
 
+#get text from the entry widget and assign it to the variable.
+#open the HTML file for writing(get a file object as a variable)
+#create a variable that holds a string of HTML code concatenating the text from the entry widget in
+#write the variable from step 3 to the html file
+#close the html file
+#open the html file in the web browser
 
 import tkinter as tk
 import webbrowser
 import html
-import os
 
 
-#Web Generator frame
-window = tk.Tk()
+#root main callback
+root = tk.Tk()
 
-   
-frame = tk.Frame(
-    master = window,
-    width = 100,
-    height = 100,
-    bg = "Silver")
-frame.pack()
+#Window manager method calls, page title, and window appearance
+root.master.title('Web Page Generator')
+root.master.config(bg="Silver",
+                     font = 'san serif',) 
 
+#Label to let user know where body of text can be enter 
+WebLabel = tk.Label(root,text='Enter new content below',font=('calibre', 11, 'bold'))
+#User input goes here in entry
+ContentEntry = tk.Entry(root,       
+                   textvariable= WPTxt,    
+                   font=('sans serif', 14, 'bold')
+                    
+#retrieves/holds user input
+WPContent = ContentEntry.get()
+                        
+# opens html file object; 'w' allows user input to override Page content
+WPhtmlFile = open("GenSelfService.html", "w")
+                        
+#create a variable that holds HTML code with Entry widget concatenated inside                   
+WPhtml = '<!DOCTYPE html>\n <html lang="en">\n <head>\n <meta charset="UTF-8">\n <title>Web Page </title>\n <body>'+ ContentEntry + '</body>\n</head>\n </html>'
+    
+#Write variable from step 3(above)to html file
+WPhtmlFile.write(WPhtml)                      
+                 
 
+#Submit button to send new content to page
+SubmitContent = tk.Button(root,text='Submit Edited/New Content', command =submit)
 
+#close File
+WPhtmlFile.close
 
-#Window manager method calls
-WebGen.master.title('Web Page Generator')#Page title
-WebGen.master.resizable(width=True, height=True) #Resize allowed
-WebGen.master.config(bg="Silver") #BG color set to silver
-
-
-WebLabel = tk.Label(text="Enter Body of text here")
-WebBody = tk.Entry()
-WebLabel.pack()
-WebBody.pack()
-        
-#new web page creation
-
-
-
-
-# messagebox - tells client that their page settings have been saved
-messagebox.showinfo(message='Your Web Page has been updated!')
-
-
-WebGen = App() #Should this 
-WebGen.mainloop()
+#Open html file in web browser
+webbrowser.open_new_tab(WPhtmlFile)
+                        
