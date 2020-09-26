@@ -1,0 +1,26 @@
+Founder: Jim Bake
+Public Relations: Barbara Smith
+Marketing/Sales: Joe Schmo
+Human Resources: Lilly Pad
+Accountant: Dennis M. Ennis
+Design: 
+	Dave Blake
+	Jennifer Baker
+	Duke Wellington
+Web Manager: 
+	Roger LeBlanc
+Front-End Developer: 
+	Julie Bluth
+	Blair Ness
+	Scott Stahp
+Back-End Developer:
+	Luke Dukem
+	Amos Soma
+	Ricky Bobby
+Test Engineer: 
+	Katie Blankenship
+	Robert Joans
+	
+
+	
+	
